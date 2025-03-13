@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0aqwvbuo6vot"]
+
+[ext_resource type="Script" uid="uid://cgdfs2ngpygvm" path="res://scenes/desktop_main.gd" id="1_h6bt8"]
+[ext_resource type="PackedScene" uid="uid://ycdh01u1nsxh" path="res://scenes/left_panel.tscn" id="2_3fke8"]
+[ext_resource type="PackedScene" uid="uid://ctiomrxi84iei" path="res://scenes/middle_panel.tscn" id="3_5c1be"]
+[ext_resource type="PackedScene" uid="uid://vcja0ymqx85v" path="res://scenes/right_panel.tscn" id="4_wac7o"]
+
+[node name="DesktopMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h6bt8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftPanel" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_3fke8")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MiddlePanel" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("3_5c1be")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightPanel" parent="HBoxContainer/VBoxContainer3" instance=ExtResource("4_wac7o")]
+layout_mode = 2
+size_flags_vertical = 3

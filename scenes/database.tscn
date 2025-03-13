@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://qik800gqcupn"]
+
+[ext_resource type="Script" uid="uid://byqf1p3uw4mrf" path="res://scenes/database.gd" id="1_s8xgl"]
+
+[node name="Database" type="Node"]
+script = ExtResource("1_s8xgl")
+
+[node name="HTTPRequestList" type="HTTPRequest" parent="."]
+
+[node name="HTTPRequestItem" type="HTTPRequest" parent="."]
