@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://btumk6c3j6s7r"]
+
+[ext_resource type="Script" uid="uid://dgptqkbqry28y" path="res://scenes/item_view.gd" id="1_1lv8f"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1lv8f")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1147.0
+offset_bottom = 641.0
+
+[node name="NameLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 138.0
+offset_right = 873.0
+offset_bottom = 301.0
+bbcode_enabled = true

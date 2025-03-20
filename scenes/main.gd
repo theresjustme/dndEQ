@@ -6,9 +6,9 @@ func _ready():
 	# Load Savefile
 	# here
 	# Choose layout
-	print("XD")
+
 	await Database.database_loaded
-	print("XD2")
+
 	var scene
 	if OS.has_feature("mobile"):
 		pass
