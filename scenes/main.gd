@@ -8,7 +8,6 @@ func _ready():
 	# Choose layout
 
 	await Database.database_loaded
-
 	var scene
 	if OS.has_feature("mobile"):
 		pass
