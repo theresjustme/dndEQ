@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgxpnno4vdmvl"]
+
+[ext_resource type="Script" uid="uid://ebq58oxwts1m" path="res://scenes/database_mobile_item.gd" id="1_ksbty"]
+
+[node name="DatabaseMobileItem" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ksbty")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ItemNameLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+
+[node name="AddItemButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Add item"
+
+[connection signal="pressed" from="HBoxContainer/AddItemButton" to="." method="_on_add_item_button_pressed"]

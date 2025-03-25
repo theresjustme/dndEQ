@@ -10,7 +10,7 @@ func _ready():
 	await Database.database_loaded
 	var scene
 	if OS.has_feature("mobile"):
-		pass
+		scene = load("res://scenes/mainMobile.tscn")
 	else:
 		scene = load("res://scenes/desktop_main.tscn")
 	var to_add = scene.instantiate()

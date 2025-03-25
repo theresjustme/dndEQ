@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://dynaw5o81absr"]
+
+[ext_resource type="Script" uid="uid://dwntgpxraf1f4" path="res://scenes/main_mobile.gd" id="1_fey5m"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_fey5m")
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="inventoryButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -177.0
+offset_right = 244.0
+offset_bottom = -2.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "inventory"
+
+[node name="propertiesButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -209.0
+offset_top = -182.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Properties"
+
+[connection signal="pressed" from="inventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="propertiesButton" to="." method="_on_properties_button_pressed"]
