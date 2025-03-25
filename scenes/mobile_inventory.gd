@@ -1,7 +1,7 @@
 extends Control
 @onready var main_screen = preload("res://scenes/mainMobile.tscn")
 @onready var inventory_scene = preload("res://scenes/mobile_properties.tscn")
-@onready var vbox = $ScrollContainer/VBoxContainer
+@onready var vbox = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
 
 
 var item_view_scene = load("res://scenes/MobileItemView.tscn")

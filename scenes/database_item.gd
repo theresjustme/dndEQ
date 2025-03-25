@@ -8,6 +8,7 @@ func init(item: Item):
 
 func _ready():
 	%ItemNameLabel.text = item.name
+		
 
 func _on_add_item_button_pressed() -> void:
 	item_clicked.emit(item)

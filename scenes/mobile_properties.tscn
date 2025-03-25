@@ -4,10 +4,9 @@
 
 [node name="LeftPanel" type="Control"]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 34.0
-offset_bottom = 628.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3jao0")
@@ -17,16 +16,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -33.0
-offset_bottom = -627.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 5
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -100,28 +98,26 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 50
 text = "Remove STR point"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 246.0
-offset_top = 1546.0
-offset_right = 1078.0
-offset_bottom = 1655.0
-rotation = 0.00752551
-
-[node name="Inventory" type="Button" parent="HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 10
+alignment = 1
+
+[node name="Inventory" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 70
 text = "Inventory"
 
-[node name="Main" type="Button" parent="HBoxContainer"]
+[node name="Main" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 70
-text = "Main
+text = "Database
 "
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SubtractButton" to="." method="_on_subtract_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
-[connection signal="pressed" from="HBoxContainer/Main" to="." method="_on_main_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Main" to="." method="_on_main_pressed"]

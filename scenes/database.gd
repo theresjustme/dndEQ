@@ -1,5 +1,5 @@
 extends Node
-
+signal added_item
 var item_data: Array[Item]
 var container_data: Array[ItemContainer]
 var pending_requests: int = 0 
@@ -35,5 +35,6 @@ func add_item_to_database(_result, response_code, _headers, body: PackedByteArra
 		item_data.append(Item.new(dict))
 	http_request.queue_free()
 	pending_requests -= 1
+	added_item.emit()
 	if pending_requests == 0:
 		database_loaded.emit()

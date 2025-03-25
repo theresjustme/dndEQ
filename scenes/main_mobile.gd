@@ -3,18 +3,18 @@ extends Control
 @onready var inventory_scene = preload("res://scenes/mobile_inventory.tscn")
 @onready var properties_scene = preload("res://scenes/mobile_properties.tscn")
 
-var item_view_scene = preload("res://scenes/database_mobile_item.tscn")  # Use preload for efficiency
+var item_view_scene = preload("res://scenes/database_mobile_item.tscn")  
 
 func _ready():
 	if not Database.item_data:
-		return  # Prevents errors if Database is empty
+		return
 
 	for item in Database.item_data:
 		var scene: Control = item_view_scene.instantiate()
 		scene.init(item)
 		scene.size_flags_vertical = SIZE_EXPAND_FILL
 		scene.connect("item_clicked", add_item_to_eq)
-		$ScrollContainer2/VBoxContainer.add_child(scene)
+		%VboxItems.add_child(scene)
 
 func add_item_to_eq(item):
 	Character.add_item(item)

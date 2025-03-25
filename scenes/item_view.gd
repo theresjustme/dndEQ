@@ -14,8 +14,8 @@ func _ready():
 		%DescriptionLabel.text = item.description
 		if item.description.ends_with("\n"):
 			%DescriptionLabel.text = item.description.erase(len(item.description)-1, 2)
-		%DescriptionLabel.size.y = 0
-		size.y = 0
+		%DescriptionLabel.size.y = 10
+		size.y = 10
 
 func _on_name_label_pressed() -> void:
 	if item_expanded:
